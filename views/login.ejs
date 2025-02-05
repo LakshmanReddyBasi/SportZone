@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login</title>
+  <style>
+    :root {
+      --primary: #ff0000;
+      --secondary: #000000;
+      --background: #000000;
+      --surface: #121212;
+      --text-primary: #ffffff;
+      --text-secondary: #888888;
+      --border: rgba(255, 255, 255, 0.2);
+      --shadow: rgba(255, 255, 255, 0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #ff0000 0%, #800000 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background: var(--surface);
+      border-radius: 1rem;
+      box-shadow: 0 10px 15px var(--shadow);
+      padding: 2rem;
+      max-width: 400px;
+      width: 100%;
+      margin: 2rem;
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--border);
+    }
+
+    input, button {
+      transition: all 0.3s ease;
+      width: 100%;
+      padding: 0.75rem;
+      margin-top: 0.5rem;
+      border-radius: 0.5rem;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--text-primary);
+    }
+
+    input:focus {
+      transform: scale(1.05);
+      border-color: var(--primary);
+      outline: none;
+    }
+
+    button {
+      background: var(--primary);
+      color: var(--text-primary);
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      background: #800000;
+    }
+
+    .form-header {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .form-header h1 {
+      font-size: 2rem;
+      font-weight: bold;
+      color: var(--text-primary);
+    }
+
+    .form-footer {
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    .form-footer a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .form-footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="form-header">
+      <h1>Login</h1>
+    </div>
+    <form action="/login" method="POST">
+      <div class="mb-6">
+        <label for="email" class="block text-lg text-white font-medium mb-2">Email:</label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          required
+          placeholder="Enter your email"
+          class="focus:outline-none focus:ring-2 focus:ring-red-600"
+        />
+      </div>
+      <div class="mb-6">
+        <label for="password" class="block text-lg text-white font-medium mb-2">Password:</label>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          required
+          placeholder="Enter your password"
+          class="focus:outline-none focus:ring-2 focus:ring-red-600"
+        />
+      </div>
+      <button type="submit" class="w-full py-3 mt-4 bg-red-600 text-white rounded-lg">Login</button>
+    </form>
+    <div class="form-footer">
+      <p class="mt-4 text-white">Don't have an account? <a href="/register">Sign up</a></p>
+    </div>
+  </div>
+</body>
+</html>
