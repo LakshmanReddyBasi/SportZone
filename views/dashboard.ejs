@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Zone: Your Ultimate Sports Event Hub</title>
+    <style>
+        :root {
+            --primary: #ff0000;
+            --secondary: #000000;
+            --background: #000000;
+            --surface: #121212;
+            --text-primary: #ffffff;
+            --text-secondary: #888888;
+            --gradient: linear-gradient(45deg, #ff0000, #800000);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--background);
+            color: var(--text-primary);
+            line-height: 1.5;
+        }
+
+        .nav-container {
+            background: var(--surface);
+            border-bottom: 1px solid #333333;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 12px 0;
+            box-shadow: 0 2px 4px rgba(255,255,255,0.05);
+        }
+
+        .container {
+            max-width: 935px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
+
+        .nav-link {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+            padding: 8px 12px;
+            border-radius: 8px;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+            background-color: rgba(255,0,0,0.1);
+        }
+
+        main {
+            margin-top: 80px;
+            padding: 40px 0;
+        }
+
+        .hero-section {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .hero-title {
+            font-size: 32px;
+            margin-bottom: 16px;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        .feature-card {
+            background: var(--surface);
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 4px 12px rgba(255,255,255,0.08);
+            transition: transform 0.3s ease;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 16px;
+            color: var(--primary);
+        }
+
+        .feature-title {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .feature-description {
+            color: var(--text-secondary);
+        }
+
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .testimonial-card {
+            background: var(--surface);
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 4px 12px rgba(255,255,255,0.08);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .testimonial-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 12px;
+            background: var(--gradient);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        footer {
+            background: var(--gradient);
+            color: white;
+            padding: 40px 0;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            text-align: center;
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 16px;
+        }
+
+        .footer-link {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .footer-link:hover {
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                gap: 16px;
+            }
+
+            .hero-title {
+                font-size: 24px;
+            }
+
+            .hero-subtitle {
+                font-size: 16px;
+            }
+
+            .features-grid,
+            .testimonials {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-links {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="nav-container">
+        <div class="container nav-content">
+            <div class="logo">SportZone</div>
+            <ul class="nav-menu">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/about" class="nav-link">About</a></li>
+                <li><a href="#features" class="nav-link">Features</a></li>
+                <% if (user) { %>
+                    <li><a href="/logout" class="nav-link">Logout</a></li>
+                <% } else { %>
+                    <li><a href="/login" class="nav-link">Login/Register</a></li>
+                <% } %>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="hero-section">
+                <h1 class="hero-title">Sports Zone: Your Ultimate Sports Event Hub</h1>
+                <p class="hero-subtitle">Unlock the full potential of your sports events with Sports Zone. Plan, manage, and engage with a community of sports enthusiasts.</p>
+            </section>
+
+            <section id="features" class="features-grid">
+                <div class="feature-card">
+                    <svg class="feature-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3M16 7V3M3 8h18M4 12h16m-1 8h-2a2 2 0 01-2-2v-5H9v5a2 2 0 01-2 2H5m10 0h2"></path>
+                    </svg>
+                    <h3 class="feature-title">Event Planner</h3>
+                    <p class="feature-description">Plan and organize your sports events with our intuitive event planner tool.</p>
+                </div>
+            
+                <div class="feature-card">
+                    <svg class="feature-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 20h10m-5-16a2 2 0 110 4 2 2 0 010-4zM4 15a4 4 0 014-4h8a4 4 0 014 4v1H4v-1z"></path>
+                    </svg>
+                    <h3 class="feature-title">Team Organizer</h3>
+                    <p class="feature-description">Effortlessly create and manage your sports teams with our team organizer.</p>
+                </div>
+            
+                <div class="feature-card">
+                    <svg class="feature-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 17a2 2 0 100-4 2 2 0 000 4zM6.343 9.657a2 2 0 100-4 2 2 0 000 4zM15.657 9.657a2 2 0 100-4 2 2 0 000 4zM6.343 14.343a2 2 0 100-4 2 2 0 000 4zM15.657 14.343a2 2 0 100-4 2 2 0 000 4z"></path>
+                    </svg>
+                    <h3 class="feature-title">Performance Analyzer</h3>
+                    <p class="feature-description">Track and analyze detailed performance metrics for your teams and players.</p>
+                </div>
+            
+                <div class="feature-card">
+                    <svg class="feature-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 11l7 7 7-7M3 5h18"></path>
+                    </svg>
+                    <h3 class="feature-title">Ranking Tracker</h3>
+                    <p class="feature-description">Stay updated with real-time rankings and leaderboards for various sports events.</p>
+                </div>
+            
+                <div class="feature-card">
+                    <svg class="feature-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h10M7 11h10m-5 4h5M5 21h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                    </svg>
+                    <h3 class="feature-title">Mobile Access</h3>
+                    <p class="feature-description">Manage your sports events on the go with our mobile-friendly platform.</p>
+                </div>
+            
+                <div class="feature-card">
+                    <svg class="feature-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5-5V4a3 3 0 00-5 5h-5v2m0 0h5v-2a3 3 0 00-5-5V4a3 3 0 00-5 5h-5v2m0 0h5v-2a3 3 0 00-5-5V4a3 3 0 00-5 5h-5v2"></path>
+                    </svg>
+                    <h3 class="feature-title">Community Builder</h3>
+                    <p class="feature-description">Connect with other sports enthusiasts and build a vibrant community around your favorite sports.</p>
+                </div>
+            </section>
+
+            <section id="testimonials" class="testimonials">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">AB</div>
+                        <h3 class="text-xl font-semibold ml-2">Alex Brown</h3>
+                    </div>
+                    <p class="text-gray-600">"SportZone has transformed the way we plan and execute our sports events. It's a game-changer!"</p>
+                </div>
+            
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">CL</div>
+                        <h3 class="text-xl font-semibold ml-2">Chris Lee</h3>
+                    </div>
+                    <p class="text-gray-600">"The performance analyzer on SportZone provides deep insights that help us improve our game."</p>
+                </div>
+            
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">EM</div>
+                        <h3 class="text-xl font-semibold ml-2">Emma Martinez</h3>
+                    </div>
+                    <p class="text-gray-600">"I love how SportZone keeps me connected with my sports community. It's more than just a platform; it's a community."</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+                    <span>© <%= new Date().getFullYear() %> SportZone™. All Rights Reserved.</span>
+            <ul class="footer-links">
+                <li><a href="/about" class="footer-link">About</a></li>
+                <li><a href="/privacy-policy" class="footer-link">Privacy Policy</a></li>
+                <li><a href="/licensing" class="footer-link">Licensing</a></li>
+                <li><a href="/contact" class="footer-link">Contact</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
